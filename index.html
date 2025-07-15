@@ -50,7 +50,7 @@
       transition: background-color 0.3s ease, transform 0.2s ease;
     }
 
-    /* 오늘 요일 색상 */
+    /* 요일별 색상 지정 */
     #main-box.mon { background-color: #FF867F; color: black; }
     #main-box.tue { background-color: #FFC247; color: black; }
     #main-box.wed { background-color: #FFE56F; color: black; }
@@ -109,7 +109,7 @@
       color: #333333;
       flex-shrink: 0;
 
-      /* 항상 보이도록 설정 */
+      /* 항상 보이게 */
       opacity: 1;
       visibility: visible;
     }
@@ -222,6 +222,11 @@
     window.onload = () => {
       updateMainBox();
       initGrid();
+
+      // ✅ 처음부터 main-box 선택된 상태로 시작
+      mainBox.classList.add('active');
+      sideBox.textContent = `${todayName} 시간표 내용 표시`;
+      mainBoxShowing = true;
     };
   </script>
 </body>
